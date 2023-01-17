@@ -1,0 +1,3 @@
+Hemos insertado código en PeliculaServicios, el cual está 'comentado' para solucionar el error
+Luego hemos insertado datos y lo hemos comprobado en Postman
+Ahora creamos actores y lo relacionaremos
