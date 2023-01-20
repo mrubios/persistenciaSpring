@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -34,6 +35,6 @@ public class Pelicula {
     int puntuacion;
 
     @OneToMany(mappedBy = "pelicula", fetch = FetchType.EAGER)
-    List<Actores> actores;
+    List<Actores> actores = new ArrayList<Actores>();
 
 }
