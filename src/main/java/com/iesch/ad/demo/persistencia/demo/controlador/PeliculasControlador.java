@@ -4,9 +4,7 @@ import com.iesch.ad.demo.persistencia.demo.modelos.Actores;
 import com.iesch.ad.demo.persistencia.demo.modelos.Pelicula;
 import com.iesch.ad.demo.persistencia.demo.servicios.PeliculaServicios;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,6 +22,12 @@ public class PeliculasControlador {
     @GetMapping("api/pelicula/{id}")
     public Pelicula buscaPorDni(@PathVariable Long id){
         return peliculaServicios.bucaPorId(id);
+    }
+
+    @PostMapping("api/pelicula")
+    public Pelicula insertarPelicula(@RequestBody Pelicula pelicula){
+        Pelicula actorSalvado = peliculaServicios.guardaPelicula(pelicula);
+        return actorSalvado;
     }
 
 }

@@ -25,4 +25,8 @@ public class PeliculaServicios {
             return optionalPelicula.get();
         }else return null;
     }
+
+    public Pelicula guardaPelicula(Pelicula pelicula) {
+        return peliculaRepositorio.save(pelicula);
+    }
 }
